@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday 💖</title>
+
+<!-- FONT CUTE -->
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+<!-- FONT VIẾT TAY -->
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/jpg" href="crush.jpg">
+<style>
+    body {
+        margin: 0;
+        background: radial-gradient(circle at top left, #ffd1e8, #ff9bb3 30%, #ff7aa2 60%, #ff5c8d 90%);
+        font-family: "Poppins", sans-serif;
+        text-align: center;
+        overflow-x: hidden;
+        transition: background 1s ease-in-out;
+    }
+
+    /* BACKGROUND MỚI SAU NÚT TIẾP TỤC */
+    .new-bg {
+        background: url('wallpaper.gif') no-repeat center center fixed !important;
+        background-size: cover !important;
+    }
+
+    /* TIÊU ĐỀ */
+    h1 {
+        font-family: "Fredoka One", cursive;
+        font-size: 62px;
+        margin-top: 70px;
+        color: #ffffff;
+        text-shadow:
+            0 0 10px rgba(255,255,255,0.9),
+            0 0 20px rgba(255,150,200,0.6),
+            0 0 35px rgba(255,130,190,0.5);
+        animation: fadeIn 1.2s ease-out;
+        padding: 0 20px;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-20px); filter: blur(4px); }
+        to { opacity: 1; transform: translateY(0); filter: blur(0); }
+    }
+
+    /* AVATAR INSTAGRAM */
+    .avatar-outer {
+        width: 150px;
+        height: 150px;
+        margin: 15px auto 10px;
+        border-radius: 50%;
+        padding: 4px;
+        background: conic-gradient(#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5,#feda75);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 18px rgba(255,120,180,0.5);
+    }
+
+    .avatar-inner {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        padding: 4px;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .avatar {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    /* LỜI CHÚC */
+    .birthday-text {
+        font-size: 20px;
+        color: #ffeef7;
+        padding: 0 25px;
+        text-shadow:
+            0 0 8px rgba(255,255,255,0.6),
+            0 0 18px rgba(255,150,200,0.5);
+        line-height: 1.6;
+    }
+
+    .box {
+        background: rgba(255,255,255,0.55);
+        padding: 18px 25px;
+        border-radius: 18px;
+        width: 380px;
+        max-width: 90%;
+        margin: 20px auto 0;
+        font-size: 18px;
+        color: #ff4d8b;
+        font-weight: 600;
+        backdrop-filter: blur(12px);
+        border: 2px solid rgba(255,255,255,0.8);
+        box-shadow: 0 8px 25px rgba(255,120,160,0.35);
+    }
+
+    button {
+        padding: 12px 35px;
+        background: #ff4d6d;
+        border: none;
+        border-radius: 25px;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        margin-top: 25px;
+        transition: .3s;
+        min-width: 180px;
+    }
+    button:hover {
+        background: #ff1e4d;
+        transform: scale(1.05);
+    }
+
+    /* CHUYỂN CẢNH */
+    .fadeOutScene {
+        animation: sceneOut 0.9s forwards ease-in-out;
+    }
+    @keyframes sceneOut {
+        to { opacity: 0; transform: scale(1.05); filter: blur(8px); }
+    }
+
+    /* BƯỚC 2 */
+    #letter {
+        display: none;
+        animation: fadeIn 1s ease-out;
+    }
+    .letter-box {
+        background: #fff;
+        width: 360px;
+        max-width: 90%;
+        padding: 22px;
+        margin: 60px auto;
+        border-radius: 20px;
+        box-shadow: 0 8px 25px rgba(255,120,160,0.35);
+        color: #ff4d8b;
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .sender {
+        margin-top: 12px;
+        font-size: 26px;
+        font-family: "Dancing Script", cursive;
+        color: #ff4d8b;
+    }
+
+    /* BƯỚC 3 */
+    #letterContent {
+        display: none;
+        margin-top: 40px;
+    }
+    .letter-card {
+        position: relative;
+        width: min(92%, 520px);
+        margin: auto;
+        background: linear-gradient(135deg,#ff8bbb,#ffd1e8);
+        padding: 0;
+        border-radius: 20px;
+        box-shadow: 0 15px 40px rgba(255,120,160,0.6);
+        transform-origin: top;
+        transform: rotateX(90deg);
+        opacity: 0;
+        animation: letterOpen 1.2s forwards ease-out;
+    }
+    @keyframes letterOpen {
+        0% { transform: rotateX(90deg); opacity: 0; filter: blur(6px); }
+        60% { transform: rotateX(-10deg); opacity: .85; }
+        100% { transform: rotateX(0deg); opacity: 1; filter: blur(0); }
+    }
+    .letter-inner {
+        border-radius: 20px;
+        background: #fff;
+        padding: 28px 25px 32px;
+    }
+    .letter-title {
+        font-size: 22px;
+        font-weight: 700;
+        color: #ff4d8b;
+        margin-bottom: 14px;
+    }
+    .letter-text {
+        font-size: 18px;
+        line-height: 1.8;
+        color: #ff4d8b;
+        white-space: pre-line;
+    }
+    .letter-footer {
+        margin-top: 18px;
+        font-size: 20px;
+        font-family: "Dancing Script", cursive;
+    }
+
+    .heart {
+        position: fixed;
+        top: -10px;
+        color: #ff1e4d;
+        font-size: 20px;
+        animation: fall 3s linear infinite;
+        pointer-events: none;
+        z-index: 1;
+    }
+    @keyframes fall {
+        to { transform: translateY(110vh); opacity: 0; }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- NHẠC 1 -->
+<audio id="introMusic" loop>
+    <source src="snaptt.me-85543248.mp3" type="audio/mpeg">
+</audio>
+
+<!-- NHẠC 2 -->
+<audio id="letterMusic" loop>
+    <source src="snaptt.me-13965744.mp3" type="audio/mpeg">
+</audio>
+
+<!-- BƯỚC 1 -->
+<div id="step1">
+
+    <h1>🎂 Sinh nhật vui vẻ nha xinh gái ơi 🎉</h1>
+
+    <div class="avatar-outer">
+        <div class="avatar-inner">
+            <img src="crush.jpg" class="avatar">
+        </div>
+    </div>
+
+    <p class="birthday-text">
+        Hôm nay là ngày 5/12, là sinh nhật của 1 bạn đáng iu nhất tui từng gặp. <br>
+        Chúc bà tuổi mới có nhiều niềm vui và hạnh phúc cũng như mọi điều may mắn sẽ đến với bà.
+    </p>
+
+    <div class="box">Tui còn một điều muốn nói nữa...</div>
+
+    <button onclick="showLetter()">Tiếp tục 👉</button>
+</div>
+
+<!-- BƯỚC 2 -->
+<div id="letter">
+    <div class="letter-box">
+        💌 BẠN GÌ ƠI CÓ THƯ NÈ  
+        <div class="sender">Người gửi: Nguyễn Hữu Thiện</div>
+    </div>
+    <button onclick="openLetter()">Mở thư 💖</button>
+</div>
+
+<!-- BƯỚC 3 -->
+<div id="letterContent">
+    <div class="letter-card">
+        <div class="letter-inner">
+            <div class="letter-title">Gửi my crush,</div>
+
+            <div class="letter-text">
+Từ lúc quen biết bà đến nay tui luôn muốn nói với bà là tui thích bà nhma tui overthinking nên lại thấy hong xứng nên tui im lặng.
+Với lại tui cũng chưa hiểu bà nhiều nên tui lại thấy bối rối, nay tui muốn cho bà những điều cần nói ra.
+Nếu được thì tui cũng muốn làm người yêu bà để hiểu bà hơn còn hong thì tụi mình vẫn là bạn nhaa. 🥺💗
+            </div>
+
+            <div class="letter-footer">— Nguyễn Hữu Thiện —</div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+/* ⭐ NHẠC 1 PHÁT SAU LẦN CHẠM ĐẦU – CHẠY 100% GITHUB/SERVER */
+document.addEventListener("click", function () {
+    const intro = document.getElementById("introMusic");
+    if (intro.paused) intro.play();
+}, { once: true });
+
+/* BƯỚC 1 → 2 */
+function showLetter() {
+    const s1 = document.getElementById("step1");
+    s1.classList.add("fadeOutScene");
+
+    const intro = document.getElementById("introMusic");
+    const letter = document.getElementById("letterMusic");
+
+    intro.pause();
+    intro.currentTime = 0;
+
+    setTimeout(() => {
+        document.body.classList.add("new-bg");
+        s1.style.display = "none";
+        document.getElementById("letter").style.display = "block";
+        letter.play();
+    }, 900);
+}
+
+/* BƯỚC 2 → 3 */
+function openLetter() {
+    document.getElementById("letter").style.display = "none";
+    document.getElementById("letterContent").style.display = "block";
+}
+
+/* TIM RƠI */
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    heart.style.fontSize = (20 + Math.random() * 20) + "px";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 3000);
+}, 250);
+
+</script>
+
+</body>
+</html>
